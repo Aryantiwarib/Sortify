@@ -1,18 +1,18 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import GmailAuth from "./features/email";
-import EmailDetails from "./features/emaildetails";
-// npm install react-router-dom
+import Home from "./components/Home/home";
+import Header from "./components/Header/header";
+import { BrowserRouter as Router } from "react-router-dom";
+import Footer from "./components/Fotter/fotter";
 
-const App = () => {
+function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<GmailAuth />} />
-        <Route path="/email/:id" element={<EmailDetails />} />
-      </Routes>
+      <Header />
+      <Home />
+      <Footer />
     </Router>
+
   );
-};
+}
 
 export default App;

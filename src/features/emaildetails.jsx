@@ -83,3 +83,14 @@ const EmailDetails = () => {
 };
 
 export default EmailDetails;
+
+
+// git remote add origin git@github.com:Aryantiwarib/SemProjects.gitgit
+// ls -al ~/.ssh
+// Get-ChildItem -Path $env:USERPROFILE\.ssh
+// ssh-keygen -t rsa -b 4096 -C "your-email@example.com"
+// Get-Content $env:USERPROFILE\.ssh\id_rsa.pub
+// ssh -T git@github.com
+// git remote -v
+// git remote set-url origin git@github.com:Aryantiwarib/SemProjects.git
+

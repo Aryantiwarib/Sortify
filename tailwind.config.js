@@ -10,3 +10,4 @@ export default {
   plugins: [],
 }
 
+// npm list tailwindcss postcss autoprefixer

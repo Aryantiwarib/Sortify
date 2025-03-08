@@ -10,23 +10,32 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.6.1",
+    "appwrite": "^14.0.1",
+    "axios": "^1.8.1",
     "dotenv": "^16.4.7",
+    "firebase": "^11.3.1",
+    "framer-motion": "^12.4.7",
+    "gapi-script": "^1.2.0",
+    "mammoth": "^1.9.0",
+    "pdfjs-dist": "^4.10.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^7.1.5"
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.2.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
-    "autoprefixer": "^10.4.14",
+    "autoprefixer": "^10.4.20",
     "eslint": "^8.45.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "postcss": "^8.4.27",
-    "tailwindcss": "^3.3.3",
-    "vite": "^4.4.5"
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "vite": "^6.2.0"
   },
   "description": "sem 3 project",
   "main": "eslint.config.js",
