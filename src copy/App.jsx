@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-const genAI = new GoogleGenerativeAI("AIzaSyDxcNEk5vDaJoC5szqwyqFoASmmQ9xwzeY"); // Replace with your API key
+const genAI = new GoogleGenerativeAI("Add_your_api_key"); // Replace with your API key
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 function App() {
