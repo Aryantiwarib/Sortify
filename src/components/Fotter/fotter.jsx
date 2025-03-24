@@ -11,22 +11,22 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition duration-300">
+                <a href="#" className="text-gray-600 hover:text-purple-900 transition duration-300">
                   Home
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition duration-300">
+                <a href="#" className="text-gray-600 hover:text-purple-900  transition duration-300">
                   About
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition duration-300">
+                <a href="#" className="text-gray-600 hover:text-purple-900  transition duration-300">
                   Services
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition duration-300">
+                <a href="#" className="text-gray-600 hover:text-purple-900  transition duration-300">
                   Contact
                 </a>
               </li>
@@ -134,12 +134,12 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Legal</h3>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition duration-300">
+                <a href="#" className="text-gray-600 hover:text-purple-900 transition duration-300">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-600 hover:text-blue-600 transition duration-300">
+                <a href="#" className="text-gray-600 hover:text-purple-900  transition duration-300">
                   Terms of Service
                 </a>
               </li>

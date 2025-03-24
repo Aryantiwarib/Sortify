@@ -1,9 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
+import LoginModal from "../Login/Login"; // Import the LoginModal component
 
 const Home = () => {
+  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false); // State for login modal
+  const authStatus = useSelector((state) => state.auth.status); // Access auth status from Redux
+  const navigate = useNavigate(); // Initialize useNavigate
+
+  const handleServiceClick = (serviceName) => {
+    if (!authStatus) {
+      setIsLoginModalOpen(true); // Open login modal if not authenticated
+      return;
+    }
+
+    // Navigate to the appropriate route based on the service name
+    if (serviceName === "Common Module") {
+      navigate("/common");
+    } else if (serviceName === "HR Module") {
+      navigate("/hrmodule");
+    } else if (serviceName === "Customer Service Module") {
+      navigate("/customercare");
+    } else if (serviceName === "modules") {
+      navigate("/modules");
+    }
+  };
+
   return (
     <div className="flex flex-col items-center min-h-screen bg-gray-100 font-sans">
+      {/* Login Modal */}
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        onClose={() => setIsLoginModalOpen(false)}
+      />
+
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -42,6 +73,7 @@ const Home = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="px-8 py-3 bg-white text-black rounded-xl font-bold hover:bg-gray-100 transition duration-300 z-10"
+          onClick={() => handleServiceClick("modules")} // Pass "modules" as the service name
         >
           Try It Now
         </motion.button>
@@ -171,31 +203,62 @@ const Home = () => {
       </div>
 
       {/* Call-to-Action Section */}
-      <div className="mt-16 w-full bg-gray-900 py-16">
+      <div className="mt-16 w-full bg-gradient-to-r from-purple-600 to-gray-600 py-20 relative overflow-hidden">
+        {/* Subtle Background Pattern */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="absolute top-0 left-0 w-full h-full bg-[url('/images/particle-pattern.svg')] bg-cover opacity-10"
+        ></motion.div>
+
+        {/* Content */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center"
+          className="text-center relative z-10"
         >
-          <h2 className="text-4xl font-bold text-white mb-6">
+          {/* Heading */}
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to Organize Your Emails?
           </h2>
+          <p className="text-lg text-white opacity-90 mb-8 max-w-2xl mx-auto">
+            Join thousands of users who are already managing their emails
+            effortlessly with our AI-powered tools. Get started today and take
+            control of your inbox!
+          </p>
+
+          {/* Button */}
           <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="px-8 py-4 bg-white text-black rounded-xl font-bold hover:bg-gray-100 transition duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 bg-white text-black rounded-xl font-bold text-lg hover:bg-gray-100 transition duration-300 shadow-lg hover:shadow-xl"
+            onClick={() => handleServiceClick("modules")} // Pass "modules" as the service name
           >
             Get Started Now
           </motion.button>
         </motion.div>
+
+        {/* Floating Icons for Visual Appeal */}
+        <motion.div
+          initial={{ y: 0 }}
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-10 left-10 text-6xl text-white opacity-20"
+        >
+          📧
+        </motion.div>
+        <motion.div
+          initial={{ y: 0 }}
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute bottom-10 right-10 text-6xl text-white opacity-20"
+        >
+          📨
+        </motion.div>
       </div>
     </div>
   );
-};
-
-const handleServiceClick = (serviceName) => {
-  alert(`Using ${serviceName} service...`);
 };
 
 const services = [
